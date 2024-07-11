@@ -57,8 +57,11 @@
 						<small><br> <!-- TEXT --> </small>
 						<ul class="actions">
 							<li>
-								<input type="file" id="resume-upload" class="hidden-input" accept=".csv">
-								<span id="file-name"></span>
+								<form id="upload-form" action="http://localhost:5000/upload" method="post" enctype="multipart/form-data">
+									<input type="file" id="resume-upload" class="hidden-input" accept=".csv">
+									<span id="file-name"></span>
+									<input type="submit" value="Upload">
+								</form>
 							</li>
 							<li><a href="References.html" class="button scrolly" target="_blank">References</a></li>
 						</ul>
