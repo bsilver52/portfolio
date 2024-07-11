@@ -58,7 +58,8 @@
 						<ul class="actions">
 							<li>
 								<label for="resume-upload" class="button scrolly">Upload Resume</label>
-        							<input type="file" id="resume-upload" style="display: none;">
+        							<input type="file" id="resume-upload" class="hidden-input" accept=".csv">
+								<span id="file-name"></span>
 							</li>
 							<li><a href="References.html" class="button scrolly" target="_blank">References</a></li>
 						</ul>
@@ -234,6 +235,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+        			document.getElementById('resume-upload').addEventListener('change', function(event) {
+            				var input = event.target;
+            				var fileName = input.files.length ? input.files[0].name : 'No file selected';
+            				document.getElementById('file-name').textContent = fileName;
+        			});
+    			</script>
 	</body>
 </html>
